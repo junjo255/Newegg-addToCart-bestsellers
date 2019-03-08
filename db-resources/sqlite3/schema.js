@@ -15,15 +15,16 @@ db.serialize(function() {
   )`);
 
   db.run(`create table competitors (
-    numReviews integer,
-    deliveryPcnt integer,
-    productPcnt integer,
-    servicePcnt integer,
-    reviewScore integer,
-    country text,
-    companyName text,
-    price integer,
-    productID integer,
+productID integer,
+numReviews integer,
+deliveryPcnt integer,
+productPcnt integer,
+servicePcnt integer,
+reviewScore integer,
+ountry text,
+companyName text,
+price integer
+  )
     CONSTRAINT fk_product 
     FOREIGN KEY (productID) 
     REFERENCES product(productID)

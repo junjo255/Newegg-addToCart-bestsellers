@@ -112,15 +112,15 @@ db.serialize(function() {
         competitor.price]
 
        db.run(`insert into competitors (
-         productID,
-         numReviews,
-         deliveryPcnt,
-         productPcnt,
-         servicePcnt,
-         reviewScore,
-         country,
-         companyName,
-         price
+productID,
+numReviews,
+deliveryPcnt,
+productPcnt,
+servicePcnt,
+reviewScore,
+country,
+companyName,
+price
        ) values (?,?,?,?,?,?,?,?,?)`, params2, (err) => {
          if (err) {
            console.log(err);

@@ -11,7 +11,7 @@ const { MongoClient } = require('mongodb'), format = require('util').format;
 
 module.exports.db = (async () => {
 
-    const client = await MongoClient.connect(`mongodb://localhost:27017`, { useNewUrlParser: true })
+    const client = await MongoClient.connect('mongodb://ec2-34-196-46-96.compute-1.amazonaws.com', { useNewUrlParser: true })
 
     const db = await client.db('newegg');
     const product = await db.collection('product')

@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start" : "node withCluster.js",
+    "start" : "node server/withCluster.js",
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode 'development' -w",
     "build-prod": "webpack -p --mode 'production'",

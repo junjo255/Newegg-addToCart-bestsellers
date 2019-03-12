@@ -1,2 +1,5 @@
 node_modules
 npm-debug.log
+newegg-addtocart-service.pem
+newegg-mongodbv1.pem
+newegg.db

@@ -1,7 +1,7 @@
 FROM node:latest
 
 
-WORKDIR /user/src/app
+WORKDIR /app
 # where our app live in the container
 
 COPY package.json ./ 

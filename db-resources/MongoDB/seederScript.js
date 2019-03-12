@@ -7,14 +7,14 @@ const { performance } = require('perf_hooks')
 // const cluster = require('cluster');
 // const numCPUs = require('os').cpus().length;
 
-MongoClient.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true }, (err, client) => {
+MongoClient.connect(`mongodb://localhost:27017`, { useNewUrlParser: true }, (err, client) => {
   if (err) {
     console.log('error', err)
   } else {
     const db = client.db('newegg');
     const product = db.collection('product')
     console.log('Connected');
-    product.drop();
+
     batchInsert(product)
       .then(() => {
         console.log('database succeeded')

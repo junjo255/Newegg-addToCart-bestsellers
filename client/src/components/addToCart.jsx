@@ -1,7 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import axios from 'axios';
-// import url from '../../../config'
+import url from '../../../config'
 
 class AddToCart extends React.Component {
   constructor(props) {
@@ -21,7 +20,8 @@ class AddToCart extends React.Component {
   }
 
   componentDidMount(){
-    // console.log(window.location.href)
+    
+    // console.log(window.location.href, "what is this one")
     const itemId = window.location.href.split("/")[3];
     this.getData(itemId);
   } 
@@ -43,23 +43,24 @@ class AddToCart extends React.Component {
   }
 
   getData(itemId) {
+    // console.log(window.location.href.split('/')[3], "is this working?")
     // var x = window.location.href.split('/')[3]
     // if (x === '') {
-    //   x = '1';
+    //   x = '5c88089307275338dceacf36';
     // }
 
     // ${url.url}/api/items/${x}
 
-
-    axios.get(`/api/items/${itemId}`)
+    axios.get(`/api/product/${itemId}`)
     .then((data) => {
-      // console.log(data);
+      console.log(data.data.onlist);
+      
       this.setState({
-        wishlists: data.data[0].onList,
-        priceProduct: data.data[0].priceProduct,
-        originalPrice: data.data[0].originalPrice,
-        savedCash: data.data[0].savedCash,
-        savedPcnt: data.data[0].savedPcnt
+        wishlists: data.data.onlist,
+        priceProduct: data.data.priceproduct,
+        originalPrice: data.data.originalprice,
+        savedCash: data.data.savedcash,
+        savedPcnt: data.data.savedpcnt
       })
       //console.log(data.data[0].onList)
     })

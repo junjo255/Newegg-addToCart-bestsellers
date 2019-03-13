@@ -7,12 +7,12 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start" : "node server/withCluster.js",
+    "start": "node server/withCluster.js",
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode 'development' -w",
     "build-prod": "webpack -p --mode 'production'",
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/withCluster.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

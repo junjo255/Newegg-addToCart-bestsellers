@@ -32,13 +32,13 @@ class BestSellers extends React.Component {
   }
 
   getData(itemId) {
-    axios.get(`/api/items/${itemId}`)
+    axios.get(`/api/product/${itemId}`)
   
     .then((data) => {
       
       console.log(data.data);
       this.setState({
-        productData: data.data
+        productData: data.data.competitors
       })
       //console.log(data.data[0].onList)
     })

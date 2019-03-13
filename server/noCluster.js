@@ -15,23 +15,30 @@ app.use(
   })  
 )
 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/dist/index.html'))
+// })
+app.use(express.static(path.join(__dirname + '/../client/dist')));
+    app.get('/api/product/:id', (req, res) => {
+
+        const { id } = req.params;
+
+        db.then((result) => {
+            result.findOne({ _id: ObjectID(id) })
+                .then(data => {
+                    if (data) {
+                        console.log('succeeded')
+                        res.send(data)
+                    } else {
+                        console.log('no')
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        })
 
 
-app.get('/api/product/:id', (req, res) => {
-  //test that api path exists
-    db.db.then((result) => {
-    result.find({"productid": +req.params.id}).toArray((err, data)=> {
-      if (err) {
-        //test to see if there's an error
-        console.log(err, ' error here');
-      } else {
-        //see if the expected data equals    
-        res.send(data);
-        res.end();
-      }
-    })
-  })
-   
     // console.log(db.db);
 });
 
@@ -42,18 +49,3 @@ app.listen(port, function () {
   console.log(`listening on port ${port}`);
 })
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/dist/index.html'))
-// })
-// app.use(express.static(path.join(__dirname + '/../client/dist')));
-
-// app.get('*.js', (req, res, next) => {
-//   req.url = req.url + '.gz';
-//   res.set('Content-Encoding', 'gzip');
-//   next();
-// });
-
-
-// app.get('/', (request, response) => {
-//   response.send('hello')
-// })

@@ -1,7 +1,7 @@
-FROM mongo
+FROM mongo:latest
 
 
-# WORKDIR /app/db-resources/MongoDB
+WORKDIR /app/db-resources/MongoDB
 # where our app live in the container
 
 # COPY package.json ./ 

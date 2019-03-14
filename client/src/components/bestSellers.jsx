@@ -53,7 +53,7 @@ class BestSellers extends React.Component {
         <h2 className="header">
           Best Sellers
         </h2>
-        <ul className="sellers-list">
+        <ul className="sellers-list">02:03 PM
           {this.state.productData.map((items, key) => {
             return (
               <div>

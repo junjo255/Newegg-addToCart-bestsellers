@@ -3,7 +3,8 @@
 
 Redesign and optimize an existing app to implement a highly scalable backend architecture.
 
-![Project Layout (3)](https://user-images.githubusercontent.com/43450544/55336449-ecf11580-546a-11e9-9065-c0fe20debf94.png)
+<img width="967" alt="Screen Shot 2019-04-01 at 10 50 38 AM" src="https://user-images.githubusercontent.com/43450544/55337112-1199bd00-546c-11e9-8b33-e8346b1052ac.png">
+
 
 
 ## Backend

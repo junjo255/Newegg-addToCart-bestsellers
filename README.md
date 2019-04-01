@@ -1,4 +1,4 @@
-##SDC (System Design Captstone) Project
+SDC (System Design Captstone) Project
 
 ------------
 
@@ -6,7 +6,7 @@
 Redesign and optimize an existing app to implement a highly scalable backend architecture.
 
 
-###Backend
+Backend
 
 ------------
 - Node, Express
@@ -14,7 +14,7 @@ Redesign and optimize an existing app to implement a highly scalable backend arc
 - **Platforms**: Nginx (load-balancing), AWS ec2 (deployment service), & Docker (containerization)
 
 
-###Project Overview
+####Process
 
 ------------
 
@@ -29,6 +29,5 @@ Redesign and optimize an existing app to implement a highly scalable backend arc
 2. **Horizontally Scalling:** After dockerizing my app using **Docker **and deploying my containers to my **AWS ec2** instance, I stress tested my app using **loader.io**. It was breaking at ~700RPS. At this phase, I identified that a potential bottleneck for me was the fact that I only had one server. It was apparent that one server was handling all the stress of these load tests where thousands of requests are happening. So I decided to explore this by** horizontally scaling** using **Nginx**. I used the default **round-robin load balancing** settings and setup 3 instances. After doing more load tests, an interesting observation was made where implementing Nginx definitely allows more requests to be handled, but there was a diminishing marginal benefit for using Nginx. My RPS decreased by 40%.
 
 3. **Caching:** Identified that my bottleneck now is the database. I explored the option of using **Redis** caching method. I dockerized Redis and deployed to each instance and optimized throughput performance by 300%. 
-
 
 

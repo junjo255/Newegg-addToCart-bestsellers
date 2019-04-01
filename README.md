@@ -1,16 +1,19 @@
 # SDC (System Design Captstone) Project
 
 
-
 Redesign and optimize an existing app to implement a highly scalable backend architecture.
 
 
 ## Backend
 
 
-- Node, Express
-- **DBMS**: MongoDB (non-relational), PostgreSQL (relational), & Redis (caching)
-- **Platforms**: Nginx (load-balancing), AWS ec2 (deployment service), & Docker (containerization)
+- Node v.10.15.3 <https://nodejs.org/en/>
+- Nginx v.1.15.10 <https://www.nginx.com/>
+- Redis v.5.0.4 <https://redis.io/>
+- Docker v.18.09.2 <https://www.docker.com/>
+- AWS ec2 <https://aws.amazon.com/ec2/>
+- MongoDB v.4.0.3 <https://www.mongodb.com/>
+- PostSQL v.11.2 <https://www.postgresql.org/>
 
 
 ## Project Overview

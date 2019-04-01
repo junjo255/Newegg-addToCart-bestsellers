@@ -1,4 +1,4 @@
-###SDC (System Design Captstone) Project
+##SDC (System Design Captstone) Project
 
 ------------
 
@@ -6,7 +6,7 @@
 Redesign and optimize an existing app to implement a highly scalable backend architecture.
 
 
-####Backend
+###Backend
 
 ------------
 - Node, Express
@@ -14,7 +14,7 @@ Redesign and optimize an existing app to implement a highly scalable backend arc
 - **Platforms**: Nginx (load-balancing), AWS ec2 (deployment service), & Docker (containerization)
 
 
-####Project Overview
+###Project Overview
 
 ------------
 

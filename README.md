@@ -2,7 +2,7 @@
 
 
 Redesign and optimize an existing app to implement a highly scalable backend architecture.
-
+[![System Design Layout](https://drive.google.com/file/d/15faCeaCz8mRzi4uFt4zF_2rtijvEfcbu/view?usp=sharing "System Design Layout")](https://drive.google.com/file/d/15faCeaCz8mRzi4uFt4zF_2rtijvEfcbu/view?usp=sharing "System Design Layout")
 
 ## Backend
 

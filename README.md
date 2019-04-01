@@ -1,6 +1,5 @@
 # SDC (System Design Captstone) Project
 
-------------
 
 
 Redesign and optimize an existing app to implement a highly scalable backend architecture.
@@ -8,7 +7,7 @@ Redesign and optimize an existing app to implement a highly scalable backend arc
 
 ## Backend
 
-------------
+
 - Node, Express
 - **DBMS**: MongoDB (non-relational), PostgreSQL (relational), & Redis (caching)
 - **Platforms**: Nginx (load-balancing), AWS ec2 (deployment service), & Docker (containerization)
@@ -16,7 +15,7 @@ Redesign and optimize an existing app to implement a highly scalable backend arc
 
 ## Project Overview
 
-------------
+
 
 - The **goal** of this project was to handle the throughput of 1000 RPS and at a latency of less than 2000ms. 
 - Through the steps that I took in the **final** and the **optimizations **that I made, I achieved a final metric of 1.5k RPS throughput at a 42ms latency. 

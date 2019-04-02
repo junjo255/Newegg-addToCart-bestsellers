@@ -19,6 +19,22 @@ Redesign and optimize an existing app to implement a highly scalable backend arc
 - PostSQL v.11.2 <https://www.postgresql.org/>
 
 
+## Development
+
+### Getting Started
+All necessary dependencies are stored in package.json. 
+
+To install all dependencies:
+`npm install`  
+
+To run the client:
+`npm run react-dev`
+
+To run the server :
+`npm run server-dev`
+
+
+
 ## Project Overview
 
 

@@ -15,7 +15,7 @@ Redesign and optimize an existing app to implement a highly scalable backend arc
 
 - Node v.10.15.3 <https://nodejs.org/en/>
 - Nginx v.1.15.10 <https://www.nginx.com/>
-- Redis v.5.0.4 <https://redis.io/>
+- Redis v.5.0.4 <https://redis.io/>r
 - Docker v.18.09.2 <https://www.docker.com/>
 - AWS ec2 <https://aws.amazon.com/ec2/>
 - MongoDB v.4.0.3 <https://www.mongodb.com/>
@@ -48,9 +48,9 @@ To run the server :
 - With that in mind, I generated 40 million records to emulate production level data sets.
 
                                ----------**3 big decisions**---------
-1. **Deciding which DBMS to go with:** The very first step I took in the project was deciding which DBMS to go with. After seeding 40 million data records to mimic real life example, I've decided to compare MongoDB with PostgreSQL on reads and writes. MongoDB had a better reads time than PostgreSQL. PostgreSQL outperformed MongoDB at writes. Apparently, there's this trade-off here where MongoDB is faster at reads but PostgreSQL is a lot faster at writes. **To make my decision**, I refered back to my components use case; users are browsing far more than they are writing or replying. So I came to a conclusion to prioritize the performance of a read and go with MongoDB.
+1. **Deciding which DBMS to go with:** The very first step I took in the project was deciding which DBMS to go with. After seeding 40 million data records to mimic real life example, I've decided to compare MongoDB with PostgreSQL on reads and writes. MongoDB had a better reads time than PostgreSQL. PostgreSQL outperformed MongoDB at writes. Apparently, there's this trade-off here where MongoDB is faster at reads but PostgreSQL is a lot faster at writes. **To make my decision**, I referred back to my components use case; users are browsing far more than they are writing or replying. So I came to a conclusion to prioritize the performance of a read and go with MongoDB.
 
-2. **Horizontally Scalling:** After dockerizing my app using **Docker **and deploying my containers to my **AWS ec2** instance, I stress tested my app using **loader.io**. It was breaking at ~190RPS. At this phase, I identified that a potential bottleneck for me was the fact that I only had one server. It was apparent that one server was handling all the stress of these load tests where thousands of requests are happening. So I decided to explore this by** horizontally scaling** using **Nginx**. I used the default **round-robin load balancing** settings and setup 3 instances. After doing more load tests, an interesting observation was made where implementing Nginx definitely allows more requests to be handled, but there was a diminishing marginal benefit for using Nginx. The throughput performance decreased by 10%.
+2. **Horizontally Scaling:** After dockerizing my app using **Docker **and deploying my containers to my **AWS ec2** instance, I stress tested my app using **loader.io**. It was breaking at ~190RPS. At this phase, I identified that a potential bottleneck for me was the fact that I only had one server. It was apparent that one server was handling all the stress of these load tests where thousands of requests are happening. So I decided to explore this by** horizontally scaling** using **Nginx**. I used the default **round-robin load balancing** settings and setup 3 instances. After doing more load tests, an interesting observation was made where implementing Nginx definitely allows more requests to be handled, but there was a diminishing marginal benefit for using Nginx. The throughput performance decreased by 10%.
 
 3. **Caching:** Identified that my bottleneck now is the database. I explored the option of using **Redis** caching method. I dockerized Redis and deployed to each instance and optimized throughput performance by 300%. 
 
